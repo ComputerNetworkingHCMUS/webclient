@@ -24,7 +24,6 @@ def getHTML(myurl):
          #print(link.get('href'))
          if (link.get('href') != "?C=N;O=D") & (link.get('href') != "?C=M;O=A") & (link.get('href') != "?C=S;O=A") & (link.get('href') != "?C=D;O=A"):
              download(myurl+link.get('href'),url[1]+"_"+name_folder)
-             print(link.get('href'))
     
 def download(url: str, dest_folder: str):
     if not os.path.exists(dest_folder):
