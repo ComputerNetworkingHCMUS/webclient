@@ -13,7 +13,7 @@ def getHTML(myurl):
     url = parse.urlparse(myurl)
     s.connect((url[1], 80))
     msg = "GET " + url[2] + " HTTP/1.1\r\nHost: "+url[1]+"\r\n\r\n"
-    print(msg)
+    #print(msg)
     s.sendall(msg.encode(FORMAT))
     #print(s.recv(chunk_size).decode(FORMAT))
     request=requests.get(myurl)
