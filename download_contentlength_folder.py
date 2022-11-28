@@ -16,17 +16,16 @@ def downloadContentLength(input=" "):
     temp=temp.split('Content-Length: ')[-1]
     temp=temp.split('\r\n')[0]
     content_length=int(temp)
-    print(content_length)
+    
 
     
     data=data[data.find(b'\r\n\r\n')+4:]
     name_folder=subdirectory.split('/')[-2]
     dest_folder=domain+"_"+name_folder
     file_path = os.path.join(dest_folder, filename)
-    # print(data)
+ 
     print("saving to", os.path.abspath(file_path))
     count=len(data)
-    
     
     if not os.path.exists(dest_folder):
             os.makedirs(dest_folder) # create folder
