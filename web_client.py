@@ -20,13 +20,13 @@ def threaded_function(input):
             
             #filename = input.split('/')[-1]
             filename2=subdirectory.split('/')[-1]
-            
+            tempsub=subdirectory.split('/')
             
             data = s.recv(1000)
             header=data[0:data.find(b'\r\n\r\n')]
             temp=header.decode()
             
-            if isValidDomain(str(filename2)) == False :
+            if (isValidDomain(str(filename2)) == False) and (len(tempsub)>2)  :
                 if temp.find('Content-Length')!=-1: # tìm thấy content-length
                     temp=temp.split('Content-Length: ')[-1]
                     temp=temp.split('\r\n')[0]
